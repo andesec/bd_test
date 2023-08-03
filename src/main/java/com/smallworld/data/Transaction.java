@@ -1,25 +1,91 @@
 package com.smallworld.data;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Transaction {
-    // Represent your transaction data here.
+  // Represent your transaction data here.
 
-  int mtn;
+  // Unique identifier of the transaction
+  private Integer mtn;
 
-  BigDecimal amount;
+  // Amount of the transaction
+  private Double amount;
 
-  String senderFullName;
+  //Sender information
+  private String senderFullName;
+  private Integer senderAge;
 
-  int senderAge;
+  //Beneficiary information
+  private String beneficiaryFullName;
+  private Integer beneficiaryAge;
 
-  String beneficiaryFullName;
+  //Issue information
+  //If there are no issues in the transaction, issueId = null, issueMessage = null and issueSolved = true
+  private Integer issueId;
+  private Boolean issueSolved;
+  private String issueMessage;
 
-  int beneficiaryAge;
+  public Transaction() {
+  }
 
-  int issueId;
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.mtn);
+  }
 
-  Boolean issueSolved;
+  @Override
+  public boolean equals(final Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    Transaction other = (Transaction) obj;
 
-  String issueMessage;
+    if (mtn.intValue() != other.mtn.intValue())
+      return false;
+
+    return true;
+  }
+
+  public Integer getMtn() {
+    return mtn;
+  }
+
+  public Double getAmount() {
+    return amount;
+  }
+
+  public String getSenderFullName() {
+    return senderFullName;
+  }
+
+  public Integer getSenderAge() {
+    return senderAge;
+  }
+
+  public String getBeneficiaryFullName() {
+    return beneficiaryFullName;
+  }
+
+  public Integer getBeneficiaryAge() {
+    return beneficiaryAge;
+  }
+
+  public Integer getIssueId() {
+    return issueId;
+  }
+
+  public Boolean getIssueSolved() {
+    return issueSolved;
+  }
+
+  public String getIssueMessage() {
+    return issueMessage;
+  }
 }
