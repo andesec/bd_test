@@ -1,6 +1,5 @@
 package com.smallworld.data;
 
-import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Transaction {
